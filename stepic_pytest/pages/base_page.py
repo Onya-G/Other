@@ -11,8 +11,7 @@ class BasePage:
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-        # если тесты падают из-за качества интернета, нужно включить неявное ожидание
-        # self.browser.implicitly_wait(timeout)
+        self.browser.implicitly_wait(timeout)
 
     def go_to_basket(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
